@@ -1,0 +1,149 @@
+:root {
+  --green: #1ab86b;
+  --green-light: #13cf3f;
+  --green-tint: rgba(100, 255, 218, 0.1);
+
+  --blue-light: #6933ff;
+
+  --text-title: #ffffff;
+  --text-body: #ffffff;
+  --text-light: #ffffffd9;
+
+  --text-decoration: #1ab86b;
+  --text-dark: #000f32;
+
+  --background: #1f1f1e;
+  --background-light: #363430;
+  --background-card: #2f332e;
+
+  --shape: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+  @media (max-width: 1080px) {
+    font-size: 93.75%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 87.5%;
+  }
+  
+}
+
+
+body,
+input,
+textarea,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: 600;
+}
+h2 {
+  font-weight: 400;
+}
+
+h1.title, .job {
+    text-align: center;
+}
+
+
+.header {
+    max-width: 85.75rem;
+    align-items:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.description {
+    padding: 20px 0 0;
+    text-color: #1f1f1e;
+    font-weight: 700;
+    margin: 0 auto;
+    max-width: 85.75rem;
+    display: flex;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+header h2 {
+    font-size: 1rem;
+} 
+
+.line-1 {
+    height: 1px;
+    background: black;
+    margin: 0 auto;
+    max-width: 85.75rem;
+}
+
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 85.75rem;
+    align-items:center;
+    margin: 0 auto;
+    color: var(--text-dark);
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.job {
+    margin-top: 5px;
+}
+
+p {
+    font-weight: 500;
+    font-size: 12px;
+    margin: 5px;
+    text-align: justify;
+}
+
+.resume {
+    max-width: 85.75rem;
+    align-items:center;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.employment-title {
+    display: flex;
+    justify-content: space-between;
+    max-width: 85.75rem;
+    align-items:center;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.employment-title p {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+ul li {
+    padding: 4px;
+    font-size: 12px;
+}
+
+ul {
+    margin-top: 0;
+}
+.employment-link p {
+    margin-bottom: 0;
+}
