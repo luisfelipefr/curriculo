@@ -66,6 +66,15 @@ h1.title, .job {
     margin: 0 auto;
 }
 
+.formation {
+    color: #1f1f1e;
+    font-weight: 700;
+    margin: 0 auto;
+    max-width: 85.75rem;
+    display: flex;
+    justify-content: space-between;
+}
+
 .description {
     padding: 20px 0 0;
     text-color: #1f1f1e;
