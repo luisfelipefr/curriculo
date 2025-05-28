@@ -1,38 +1,92 @@
-**Documentação: Gerador de PDF do Currículo**
+# 📄 Documentação: Gerador de PDF do Currículo
 
-Esta ferramenta automatiza a geração de um PDF a partir de uma página web usando Pyppeteer e Chromium. Abaixo você encontrará instruções para instalar dependências, configurar e executar o aplicativo.
----
-
-## 1. Pré‑requisitos
-
-Antes de começar, certifique‑se de ter:
-
-* **Python 3.7+** instalado no sistema.
-* **Chromium** (pacote Debian/Ubuntu: `chromium` ou `chromium-browser`).
-* Uma **virtualenv** (recomendado) ou ambiente global configurado.
+Esta ferramenta automatiza a geração de um PDF a partir de uma página web usando **Pyppeteer** e **Chromium**. Abaixo estão as instruções para instalação, configuração e automação com `crontab`.
 
 ---
 
-## 2. Instalação
+## ✅ 1. Pré-requisitos
 
-1. Clone ou acesse a pasta do projeto:
+Antes de começar, certifique-se de ter:
+
+* **Python 3.7+** instalado;
+* **Chromium** instalado (`chromium` ou `chromium-browser` em sistemas Debian/Ubuntu);
+* Um **ambiente virtual (venv)** criado e ativado (recomendado).
+
+---
+
+## ⚙️ 2. Instalação
+
+1. Clone o repositório e acesse a pasta:
 
    ```bash
-   git clone https://github.com/luisfelipefr/curriculo
+   git clone https://github.com/seu-usuario/curriculo
    cd curriculo
    ```
 
-2. Crie e ative um ambiente virtual:
+2. Crie e ative o ambiente virtual:
 
    ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
+   python3 -m venv venv
+   source venv/bin/activate
    ```
 
-3. Instale as dependências do Python:
+3. Instale as dependências do projeto:
 
    ```bash
    pip install pyppeteer
    ```
+
+---
+
+## 🔁 3. Agendamento com `crontab` (execução automática)
+
+Para gerar o PDF automaticamente a cada 5 minutos **apenas se houver mudança no conteúdo**, use o `crontab`.
+
+### Passos:
+
+1. Verifique se o ambiente virtual tem o `pyppeteer` instalado:
+
+   ```bash
+   /home/seu-usuario/projects/curriculo/venv/bin/python -m pip show pyppeteer
+   ```
+
+2. Edite o crontab:
+
+   ```bash
+   crontab -e
+   ```
+
+3. Adicione a seguinte linha:
+
+   ```bash
+   */5 * * * * /home/seu-usuario/projects/curriculo/venv/bin/python /home/seu-usuario/projects/curriculo/generate_pdf.py
+   ```
+
+### Explicação:
+
+| Elemento          | Função                                   |
+| ----------------- | ---------------------------------------- |
+| `*/5 * * * *`     | Executa a cada 5 minutos                 |
+| `venv/bin/python` | Usa o Python com dependências instaladas |
+| `generate_pdf.py` | Script que gera o PDF                    |
+
+---
+
+---
+
+## 🧪 Teste Manual
+
+Você pode rodar manualmente o script com:
+
+```bash
+/home/seu-usuario/projects/curriculo/venv/bin/python /home/seu-usuario/projects/curriculo/generate_pdf.py
+```
+
+---
+
+## ✅ Resultado Esperado
+
+* Um PDF atualizado será gerado **apenas quando o site for alterado**.
+* Logs com horário da execução serão registrados em `log.txt`.
 
 ---
